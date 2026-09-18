@@ -349,3 +349,304 @@ footer {
         gap: 8px;
     }
 }
+
+/* ========================================
+   CASE STUDY PAGES
+======================================== */
+
+.case-hero {
+    padding: 110px 0 70px;
+}
+
+.back-link {
+    display: inline-block;
+    color: #94a3b8;
+    text-decoration: none;
+    margin-bottom: 45px;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    color: #38bdf8;
+}
+
+.case-title {
+    font-size: clamp(52px, 7vw, 86px);
+    line-height: 1;
+    letter-spacing: -4px;
+    max-width: 850px;
+    margin-top: 16px;
+}
+
+.case-intro {
+    max-width: 720px;
+    color: #94a3b8;
+    font-size: 20px;
+    margin-top: 28px;
+    line-height: 1.7;
+}
+
+.case-section {
+    border-top: 1px solid #1e293b;
+}
+
+.case-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.case-metric {
+    background: #0f1b2d;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.case-metric strong {
+    display: block;
+    color: #38bdf8;
+    font-size: 30px;
+}
+
+.case-metric span {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.case-content {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 760px);
+    gap: 35px;
+}
+
+.case-number {
+    color: #334155;
+    font-size: 42px;
+    font-weight: 800;
+}
+
+.case-content p {
+    color: #94a3b8;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.data-grid,
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.data-grid > div,
+.feature-box {
+    background: #0f1b2d;
+    border: 1px solid #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.data-grid strong {
+    display: block;
+    color: #38bdf8;
+}
+
+.data-grid span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.feature-box strong {
+    color: #e2e8f0;
+}
+
+.feature-box p {
+    font-size: 14px;
+    margin: 7px 0 0;
+}
+
+.journey {
+    margin-top: 35px;
+}
+
+.journey-step {
+    background: #0f1b2d;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.journey-step span {
+    display: block;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.journey-step strong {
+    display: block;
+    color: #38bdf8;
+    font-size: 28px;
+    margin: 5px 0;
+}
+
+.journey-step p {
+    font-size: 14px;
+    margin: 5px 0 0;
+}
+
+.journey-arrow {
+    color: #38bdf8;
+    margin: 10px 0 10px 30px;
+    font-size: 22px;
+}
+
+.final-step {
+    border-color: #38bdf8;
+}
+
+.model-table {
+    margin-top: 30px;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.model-row {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    padding: 18px 20px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.model-row:last-child {
+    border-bottom: none;
+}
+
+.model-header {
+    color: #64748b;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.model-row strong {
+    color: #e2e8f0;
+}
+
+.best-model {
+    background: rgba(56, 189, 248, .07);
+}
+
+.best-model strong {
+    color: #38bdf8;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.results-grid div {
+    background: #0f1b2d;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.results-grid span {
+    display: block;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.results-grid strong {
+    color: #38bdf8;
+    font-size: 30px;
+}
+
+.importance-item {
+    margin-top: 35px;
+}
+
+.importance-item > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.importance-item span {
+    color: #38bdf8;
+}
+
+.importance-bar {
+    height: 12px;
+    background: #111c2e;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.importance-bar div {
+    height: 100%;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    border-radius: 20px;
+}
+
+.takeaway {
+    border-left: 2px solid #38bdf8;
+    padding-left: 20px;
+    margin-top: 30px;
+}
+
+.takeaway strong {
+    font-size: 18px;
+}
+
+.takeaway p {
+    margin-top: 8px;
+}
+
+.project-end {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.project-end h2 {
+    margin-top: 8px;
+    font-size: 32px;
+}
+
+@media (max-width: 760px) {
+
+    .case-title {
+        letter-spacing: -2px;
+    }
+
+    .case-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .case-content {
+        grid-template-columns: 1fr;
+    }
+
+    .case-number {
+        font-size: 25px;
+    }
+
+    .data-grid,
+    .feature-grid,
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-end {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
