@@ -1,164 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Justin Analytics</title>
+    <meta name="description"
+          content="Justin's portfolio showcasing projects in data analytics, machine learning and supply chain.">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #0f172a;
-            color: white;
-        }
+    <title>Justin Analytics | Data & Supply Chain</title>
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 25px 10%;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-        }
-
-        .hero {
-            padding: 120px 10%;
-        }
-
-        .hero h1 {
-            font-size: 60px;
-            margin-bottom: 10px;
-        }
-
-        .hero h2 {
-            color: #94a3b8;
-            font-weight: normal;
-        }
-
-        .hero p {
-            max-width: 600px;
-            line-height: 1.7;
-            color: #cbd5e1;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 22px;
-            background: white;
-            color: #0f172a;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-
-        .projects {
-            padding: 50px 10%;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-        }
-
-        .card p {
-            color: #cbd5e1;
-        }
-
-        footer {
-            text-align: center;
-            padding: 50px;
-            color: #64748b;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <nav>
-    <strong>JUSTIN ANALYTICS</strong>
+    <div class="container nav-container">
 
-    <div>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="https://github.com/ShinyDratini">GitHub</a>
+        <div class="logo">
+            JUSTIN<span>ANALYTICS</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="https://github.com/ShinyDratini"
+               target="_blank"
+               rel="noopener noreferrer">GitHub</a>
+        </div>
+
     </div>
 </nav>
 
 
+<main>
+
 <section class="hero">
 
-    <h1>Hi, I'm Justin.</h1>
+    <div class="container">
 
-    <h2>Supply Chain × Data Analytics</h2>
-
-    <p>
-        I combine logistics experience with data analytics,
-        machine learning and automation to turn operational
-        data into useful business insights.
-    </p>
-
-    <a class="button" href="#projects">
-        View My Projects
-    </a>
-
-</section>
-
-
-<section class="projects" id="projects">
-
-    <h2>Featured Projects</h2>
-
-    <div class="project-grid">
-
-        <div class="card">
-            <h3>📈 Store Sales Forecasting</h3>
-            <p>
-                Machine learning forecasting project using more
-                than 3 million retail sales records.
-            </p>
-            <strong>Python · ML · Time Series</strong>
+        <div class="eyebrow">
+            SUPPLY CHAIN × DATA ANALYTICS
         </div>
 
+        <h1>
+            I turn data into
+            <span class="gradient-text">decisions.</span>
+        </h1>
 
-        <div class="card">
-            <h3>🧠 Perfume Recommendation System</h3>
-            <p>
-                NLP recommendation engine built using a dataset
-                of more than 130,000 perfumes.
-            </p>
-            <strong>Python · NLP · TF-IDF</strong>
+        <p class="hero-description">
+            Hi, I'm Justin. I combine real-world logistics experience
+            with data analytics, machine learning and automation to
+            solve business problems and uncover actionable insights.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn btn-primary">
+                Explore My Work ↓
+            </a>
+
+            <a href="https://github.com/ShinyDratini"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-secondary">
+                GitHub ↗
+            </a>
+
         </div>
 
-
-        <div class="card">
-            <h3>📚 Web Data Mining</h3>
-            <p>
-                Automated web scraping and data collection
-                pipeline with recommendation capabilities.
-            </p>
-            <strong>BeautifulSoup · Pandas · NLP</strong>
-        </div>
-
-
-        <div class="card">
-            <h3>🛣️ Pothole Detection</h3>
-            <p>
-                Computer vision project using image detection
-                to identify potholes from road images.
-            </p>
-            <strong>Computer Vision · Machine Learning</strong>
+        <div class="skills">
+            <span class="skill">Python</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Machine Learning</span>
+            <span class="skill">Pandas</span>
+            <span class="skill">NLP</span>
+            <span class="skill">Power BI</span>
+            <span class="skill">Supply Chain</span>
         </div>
 
     </div>
@@ -166,25 +85,279 @@
 </section>
 
 
-<section class="projects" id="about">
+<section id="projects">
 
-    <h2>About Me</h2>
+<div class="container">
 
-    <p>
-        I'm a logistics professional with experience in
-        end-to-end supply chain operations, KPI analysis and
-        process improvement.
+    <div class="section-label">Selected Work</div>
 
-        I use data analytics and machine learning to explore
-        how operational data can support better business
-        decisions.
+    <h2 class="section-title">
+        Projects
+    </h2>
+
+    <p class="section-description">
+        Projects exploring forecasting, machine learning,
+        natural language processing, computer vision and
+        automated data collection.
     </p>
+
+
+    <div class="project-grid">
+
+
+        <!-- SALES FORECASTING -->
+
+        <article class="project-card">
+
+            <span class="project-number">01 / FORECASTING</span>
+
+            <h3>Store Sales Forecasting</h3>
+
+            <p>
+                Built a machine-learning forecasting pipeline using
+                more than 3 million retail observations. Engineered
+                promotion, transaction, lag and rolling features to
+                improve sales predictions.
+            </p>
+
+            <div class="metrics">
+
+                <div class="metric">
+                    <strong>3M+</strong>
+                    <span>OBSERVATIONS</span>
+                </div>
+
+                <div class="metric">
+                    <strong>0.852</strong>
+                    <span>R² SCORE</span>
+                </div>
+
+                <div class="metric">
+                    <strong>0.108</strong>
+                    <span>RMSLE</span>
+                </div>
+
+            </div>
+
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Time Series</span>
+            </div>
+
+            <div class="project-links">
+                <a href="#">Case Study →</a>
+                <a href="#">GitHub ↗</a>
+            </div>
+
+        </article>
+
+
+        <!-- PERFUME -->
+
+        <article class="project-card">
+
+            <span class="project-number">02 / NLP</span>
+
+            <h3>Perfume Recommendation Engine</h3>
+
+            <p>
+                Developed an NLP-based recommendation system that
+                analyzes fragrance descriptions and accords to identify
+                similar perfumes using TF-IDF and cosine similarity.
+            </p>
+
+            <div class="metrics">
+
+                <div class="metric">
+                    <strong>131K+</strong>
+                    <span>PERFUMES</span>
+                </div>
+
+                <div class="metric">
+                    <strong>TF-IDF</strong>
+                    <span>NLP MODEL</span>
+                </div>
+
+            </div>
+
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">NLP</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">Cosine Similarity</span>
+            </div>
+
+            <div class="project-links">
+                <a href="#">Case Study →</a>
+                <a href="#">GitHub ↗</a>
+            </div>
+
+        </article>
+
+
+        <!-- WEB SCRAPING -->
+
+        <article class="project-card">
+
+            <span class="project-number">03 / DATA MINING</span>
+
+            <h3>Web Scraping & Data Mining</h3>
+
+            <p>
+                Built an automated Python pipeline that collects product
+                information across catalogue and individual product pages,
+                cleans the data and exports structured datasets for analysis.
+            </p>
+
+            <div class="metrics">
+
+                <div class="metric">
+                    <strong>Python</strong>
+                    <span>AUTOMATION</span>
+                </div>
+
+                <div class="metric">
+                    <strong>NLP</strong>
+                    <span>RECOMMENDER</span>
+                </div>
+
+            </div>
+
+            <div class="tags">
+                <span class="tag">BeautifulSoup</span>
+                <span class="tag">Requests</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">TF-IDF</span>
+            </div>
+
+            <div class="project-links">
+                <a href="#">Case Study →</a>
+                <a href="#">GitHub ↗</a>
+            </div>
+
+        </article>
+
+
+        <!-- POTHOLE -->
+
+        <article class="project-card">
+
+            <span class="project-number">04 / COMPUTER VISION</span>
+
+            <h3>Pothole Detection</h3>
+
+            <p>
+                Applied machine learning and computer vision techniques
+                to road imagery to detect potholes and explore how
+                image-based models can support infrastructure monitoring.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Image Detection</span>
+            </div>
+
+            <div class="project-links">
+                <a href="#">Case Study →</a>
+                <a href="#">GitHub ↗</a>
+            </div>
+
+        </article>
+
+
+    </div>
+
+</div>
 
 </section>
 
 
+<section id="about">
+
+<div class="container">
+
+    <div class="section-label">Behind the Data</div>
+
+    <h2 class="section-title">
+        About Me
+    </h2>
+
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <p>
+                I'm a logistics and supply chain professional with
+                hands-on experience managing end-to-end operations,
+                KPI reporting, vendor performance and process improvement.
+            </p>
+
+            <p>
+                Alongside my operational experience, I've developed
+                skills across Python, SQL, machine learning and data
+                analytics, allowing me to approach supply chain problems
+                from both operational and analytical perspectives.
+            </p>
+
+            <p>
+                I'm particularly interested in using data to improve
+                forecasting, operational efficiency and business
+                decision-making.
+            </p>
+
+        </div>
+
+
+        <div class="about-stats">
+
+            <div class="stat">
+                <strong>7+</strong>
+                <span>Years Logistics Experience</span>
+            </div>
+
+            <div class="stat">
+                <strong>3M+</strong>
+                <span>Records Analyzed</span>
+            </div>
+
+            <div class="stat">
+                <strong>4</strong>
+                <span>Featured Projects</span>
+            </div>
+
+            <div class="stat">
+                <strong>∞</strong>
+                <span>Things Left to Learn</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+</main>
+
+
 <footer>
-    © 2026 Justin Analytics
+
+    <div class="container footer-content">
+
+        <span>© 2026 Justin Analytics</span>
+
+        <span>
+            Built with HTML & CSS · Hosted on GitHub Pages
+        </span>
+
+    </div>
+
 </footer>
 
 </body>
