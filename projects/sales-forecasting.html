@@ -1,1 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Store Sales Forecasting case study by Justin Analytics.">
+
+    <title>Store Sales Forecasting | Justin Analytics</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="container nav-container">
+
+        <a href="../index.html" class="logo" style="text-decoration:none; color:white;">
+            JUSTIN<span>ANALYTICS</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="../index.html#projects">Projects</a>
+            <a href="../index.html#about">About</a>
+            <a href="https://github.com/ShinyDratini"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+        </div>
+
+    </div>
+</nav>
+
+
+<main>
+
+<!-- PROJECT HERO -->
+
+<section class="case-hero">
+
+    <div class="container">
+
+        <a href="../index.html#projects" class="back-link">
+            ← Back to Projects
+        </a>
+
+        <div class="section-label">
+            01 / MACHINE LEARNING · FORECASTING
+        </div>
+
+        <h1 class="case-title">
+            Store Sales
+            <span class="gradient-text">Forecasting.</span>
+        </h1>
+
+        <p class="case-intro">
+            Building a machine-learning forecasting pipeline to predict
+            retail demand using historical sales, promotions, calendar
+            patterns and transaction data.
+        </p>
+
+        <div class="skills">
+            <span class="skill">Python</span>
+            <span class="skill">Pandas</span>
+            <span class="skill">XGBoost</span>
+            <span class="skill">Scikit-learn</span>
+            <span class="skill">Time Series</span>
+            <span class="skill">Feature Engineering</span>
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="https://github.com/ShinyDratini/Store-Sales---Time-Series-Forecasting"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary">
+                View GitHub Repository ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- KEY RESULTS -->
+
+<section class="case-section">
+
+    <div class="container">
+
+        <div class="section-label">
+            At a Glance
+        </div>
+
+        <h2 class="section-title">
+            Key Results
+        </h2>
+
+        <div class="case-metrics">
+
+            <div class="case-metric">
+                <strong>3M+</strong>
+                <span>Sales Records</span>
+            </div>
+
+            <div class="case-metric">
+                <strong>0.8524</strong>
+                <span>Final R²</span>
+            </div>
+
+            <div class="case-metric">
+                <strong>975.38</strong>
+                <span>MAE</span>
+            </div>
+
+            <div class="case-metric">
+                <strong>0.1077</strong>
+                <span>RMSLE</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROBLEM -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">
+            01
+        </div>
+
+        <div>
+
+            <div class="section-label">
+                The Problem
+            </div>
+
+            <h2 class="section-title">
+                Forecasting retail demand
+            </h2>
+
+            <p>
+                Retail demand is influenced by more than historical sales.
+                Promotions, store activity, calendar effects and recent
+                demand patterns can all affect future sales.
+            </p>
+
+            <p>
+                The objective of this project was to build and progressively
+                improve a machine-learning model capable of forecasting
+                store sales while identifying which operational variables
+                contributed most to predictive performance.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DATA -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">
+            02
+        </div>
+
+        <div>
+
+            <div class="section-label">
+                Dataset
+            </div>
+
+            <h2 class="section-title">
+                More than 3 million observations
+            </h2>
+
+            <p>
+                The project uses the Corporación Favorita grocery sales
+                dataset, containing historical sales across multiple
+                stores and product families.
+            </p>
+
+            <div class="data-grid">
+
+                <div>
+                    <strong>date</strong>
+                    <span>Sales date</span>
+                </div>
+
+                <div>
+                    <strong>store_nbr</strong>
+                    <span>Store identifier</span>
+                </div>
+
+                <div>
+                    <strong>family</strong>
+                    <span>Product family</span>
+                </div>
+
+                <div>
+                    <strong>sales</strong>
+                    <span>Target variable</span>
+                </div>
+
+                <div>
+                    <strong>onpromotion</strong>
+                    <span>Promotional activity</span>
+                </div>
+
+                <div>
+                    <strong>transactions</strong>
+                    <span>Store transaction volume</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURE ENGINEERING -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">
+            03
+        </div>
+
+        <div>
+
+            <div class="section-label">
+                Feature Engineering
+            </div>
+
+            <h2 class="section-title">
+                Turning historical data into predictive signals
+            </h2>
+
+            <p>
+                Time-series and operational features were engineered to
+                capture recent demand, longer-term patterns, calendar
+                effects and changes in store activity.
+            </p>
+
+            <div class="feature-grid">
+
+                <div class="feature-box">
+                    <strong>Lag Features</strong>
+                    <p>7-day, 14-day and 28-day historical sales.</p>
+                </div>
+
+                <div class="feature-box">
+                    <strong>Rolling Features</strong>
+                    <p>7-day and 30-day rolling demand patterns.</p>
+                </div>
+
+                <div class="feature-box">
+                    <strong>Calendar Features</strong>
+                    <p>Day of week, month and day of month.</p>
+                </div>
+
+                <div class="feature-box">
+                    <strong>Promotion</strong>
+                    <p>Promotional activity affecting product demand.</p>
+                </div>
+
+                <div class="feature-box">
+                    <strong>Holiday Events</strong>
+                    <p>Calendar and holiday-related demand effects.</p>
+                </div>
+
+                <div class="feature-box">
+                    <strong>Transactions</strong>
+                    <p>Store activity used as an additional demand signal.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MODEL JOURNEY -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">
+            04
+        </div>
+
+        <div>
+
+            <div class="section-label">
+                Model Development
+            </div>
+
+            <h2 class="section-title">
+                Improving the forecast step by step
+            </h2>
+
+            <p>
+                Rather than treating the model as a single experiment,
+                the forecasting pipeline was improved iteratively as
+                additional information was introduced.
+            </p>
+
+            <div class="journey">
+
+                <div class="journey-step">
+                    <span>Initial Model</span>
+                    <strong>R² 0.5781</strong>
+                    <p>
+                        Initial XGBoost forecasting model using historical
+                        demand features.
+                    </p>
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step">
+                    <span>Feature Improvements</span>
+                    <strong>R² 0.6027</strong>
+                    <p>
+                        Additional time-series and calendar information
+                        improved predictive performance.
+                    </p>
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step">
+                    <span>Promotion + Holiday Information</span>
+                    <strong>R² 0.6471</strong>
+                    <p>
+                        Business and calendar context provided additional
+                        information about changing demand.
+                    </p>
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step final-step">
+                    <span>Transaction Data Added</span>
+                    <strong>R² 0.8524</strong>
+                    <p>
+                        Adding store transaction activity produced the
+                        largest improvement in model performance.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MODEL COMPARISON -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">
+            05
+        </div>
+
+        <div>
+
+            <div class="section-label">
+                Model Comparison
+            </div>
+
+            <h2 class="section-title">
+                Comparing forecasting approaches
+            </h2>
+
+            <p>
+                Multiple regression approaches were evaluated using the
+                engineered dataset.
+            </p>
+
+            <div class="model-table">
+
+                <div class="model-row model-header">
+                    <span>Model</span>
+                    <span>R²</span>
+                </div>
+
+                <div class="model-row">
+                    <span>Linear Regression</span>
+                    <strong>0.7801</strong>
+                </div>
+
+                <div class="model-row">
+                    <span>Random Forest</span>
+                    <strong>0.8399</strong>
+                </div>
+
+                <div class="model-row best-model">
+                    <span>XGBoost</span>
+                    <strong>0.8524</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL PERFORMANCE -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">
+            06
+        </div>
+
+        <div>
+
+            <div class="section-label">
+                Final Performance
+            </div>
+
+            <h2 class="section-title">
+                Final XGBoost model
+            </h2>
+
+            <div class="results-grid">
+
+                <div>
+                    <span>MAE</span>
+                    <strong>975.38</strong>
+                </div>
+
+                <div>
+                    <span>RMSE</span>
+                    <strong>1,348.27</strong>
+                </div>
+
+                <div>
+                    <span>R²</span>
+                    <strong>0.8524</strong>
+                </div>
+
+                <div>
+                    <span>RMSLE</span>
+                    <strong>0.10774</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURE IMPORTANCE -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">
+            07
+        </div>
+
+        <div>
+
+            <div class="section-label">
+                Model Interpretation
+            </div>
+
+            <h2 class="section-title">
+                What drove the predictions?
+            </h2>
+
+            <p>
+                Transaction volume became the most influential feature
+                in the final XGBoost model, representing approximately
+                45.9% of feature importance.
+            </p>
+
+            <p>
+                Holiday information, recent rolling sales and day-of-week
+                patterns also contributed to the model, highlighting the
+                importance of combining historical demand with operational
+                and calendar context.
+            </p>
+
+            <div class="importance-item">
+                <div>
+                    <strong>Transactions</strong>
+                    <span>45.9%</span>
+                </div>
+
+                <div class="importance-bar">
+                    <div style="width:45.9%"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TAKEAWAYS -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">
+            08
+        </div>
+
+        <div>
+
+            <div class="section-label">
+                Key Takeaways
+            </div>
+
+            <h2 class="section-title">
+                From prediction to business insight
+            </h2>
+
+            <div class="takeaway">
+
+                <strong>Operational activity matters.</strong>
+
+                <p>
+                    Transaction volume provided a powerful signal of
+                    underlying store activity and substantially improved
+                    forecasting performance.
+                </p>
+
+            </div>
+
+            <div class="takeaway">
+
+                <strong>Feature engineering was critical.</strong>
+
+                <p>
+                    Lag, rolling, calendar, promotion and holiday features
+                    allowed the model to capture different dimensions of
+                    retail demand.
+                </p>
+
+            </div>
+
+            <div class="takeaway">
+
+                <strong>Model development should be iterative.</strong>
+
+                <p>
+                    Measuring performance after each improvement made it
+                    possible to understand which additional data actually
+                    created predictive value.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- END -->
+
+<section class="case-section">
+
+    <div class="container project-end">
+
+        <div>
+
+            <div class="section-label">
+                Explore the Code
+            </div>
+
+            <h2>
+                Want to see how it was built?
+            </h2>
+
+        </div>
+
+        <a href="https://github.com/ShinyDratini/Store-Sales---Time-Series-Forecasting"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary">
+            View Project on GitHub ↗
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-content">
+
+        <span>© 2026 Justin Analytics</span>
+
+        <span>
+            Built with HTML & CSS · Hosted on GitHub Pages
+        </span>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
