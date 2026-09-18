@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Justin Analytics</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #0f172a;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 10%;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        .hero {
+            padding: 120px 10%;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            color: #94a3b8;
+            font-weight: normal;
+        }
+
+        .hero p {
+            max-width: 600px;
+            line-height: 1.7;
+            color: #cbd5e1;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 22px;
+            background: white;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .projects {
+            padding: 50px 10%;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <strong>JUSTIN ANALYTICS</strong>
+
+    <div>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="https://github.com/ShinyDratini">GitHub</a>
+    </div>
+</nav>
+
+
+<section class="hero">
+
+    <h1>Hi, I'm Justin.</h1>
+
+    <h2>Supply Chain × Data Analytics</h2>
+
+    <p>
+        I combine logistics experience with data analytics,
+        machine learning and automation to turn operational
+        data into useful business insights.
+    </p>
+
+    <a class="button" href="#projects">
+        View My Projects
+    </a>
+
+</section>
+
+
+<section class="projects" id="projects">
+
+    <h2>Featured Projects</h2>
+
+    <div class="project-grid">
+
+        <div class="card">
+            <h3>📈 Store Sales Forecasting</h3>
+            <p>
+                Machine learning forecasting project using more
+                than 3 million retail sales records.
+            </p>
+            <strong>Python · ML · Time Series</strong>
+        </div>
+
+
+        <div class="card">
+            <h3>🧠 Perfume Recommendation System</h3>
+            <p>
+                NLP recommendation engine built using a dataset
+                of more than 130,000 perfumes.
+            </p>
+            <strong>Python · NLP · TF-IDF</strong>
+        </div>
+
+
+        <div class="card">
+            <h3>📚 Web Data Mining</h3>
+            <p>
+                Automated web scraping and data collection
+                pipeline with recommendation capabilities.
+            </p>
+            <strong>BeautifulSoup · Pandas · NLP</strong>
+        </div>
+
+
+        <div class="card">
+            <h3>🛣️ Pothole Detection</h3>
+            <p>
+                Computer vision project using image detection
+                to identify potholes from road images.
+            </p>
+            <strong>Computer Vision · Machine Learning</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="projects" id="about">
+
+    <h2>About Me</h2>
+
+    <p>
+        I'm a logistics professional with experience in
+        end-to-end supply chain operations, KPI analysis and
+        process improvement.
+
+        I use data analytics and machine learning to explore
+        how operational data can support better business
+        decisions.
+    </p>
+
+</section>
+
+
+<footer>
+    © 2026 Justin Analytics
+</footer>
+
+</body>
+</html>
