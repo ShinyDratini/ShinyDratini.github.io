@@ -1,0 +1,1045 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Web Scraping and Data Mining case study by Justin Analytics.">
+
+    <title>Web Scraping & Data Mining | Justin Analytics</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="container nav-container">
+
+        <a href="../index.html"
+           class="logo"
+           style="text-decoration:none; color:white;">
+            JUSTIN<span>ANALYTICS</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="../index.html#projects">
+                Projects
+            </a>
+
+            <a href="../index.html#about">
+                About
+            </a>
+
+            <a href="https://github.com/ShinyDratini"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+</nav>
+
+
+<main>
+
+<!-- PROJECT HERO -->
+
+<section class="case-hero">
+
+    <div class="container">
+
+        <a href="../index.html#projects"
+           class="back-link">
+            ← Back to Projects
+        </a>
+
+        <div class="section-label">
+            03 / WEB SCRAPING · DATA MINING · NLP
+        </div>
+
+        <h1 class="case-title">
+            Web Scraping &
+            <span class="gradient-text">
+                Data Mining.
+            </span>
+        </h1>
+
+        <p class="case-intro">
+            Building an automated Python pipeline to collect,
+            clean and transform website data into structured
+            datasets, followed by an NLP-powered book
+            recommendation system.
+        </p>
+
+        <div class="skills">
+
+            <span class="skill">Python</span>
+            <span class="skill">Requests</span>
+            <span class="skill">BeautifulSoup</span>
+            <span class="skill">Pandas</span>
+            <span class="skill">Regex</span>
+            <span class="skill">TF-IDF</span>
+            <span class="skill">Cosine Similarity</span>
+
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="https://github.com/ShinyDratini/web-scraping-data-mining"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary">
+                View GitHub Repository ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECT HIGHLIGHTS -->
+
+<section class="case-section">
+
+    <div class="container">
+
+        <div class="section-label">
+            At a Glance
+        </div>
+
+        <h2 class="section-title">
+            Project Highlights
+        </h2>
+
+        <div class="case-metrics">
+
+            <div class="case-metric">
+                <strong>Python</strong>
+                <span>Data Collection</span>
+            </div>
+
+            <div class="case-metric">
+                <strong>HTML</strong>
+                <span>Source Data</span>
+            </div>
+
+            <div class="case-metric">
+                <strong>CSV / XLSX</strong>
+                <span>Data Export</span>
+            </div>
+
+            <div class="case-metric">
+                <strong>TF-IDF</strong>
+                <span>Recommendation Engine</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- THE PROBLEM -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">01</div>
+
+        <div>
+
+            <div class="section-label">
+                The Problem
+            </div>
+
+            <h2 class="section-title">
+                Turning website information into usable data
+            </h2>
+
+            <p>
+                Product information is often distributed across
+                multiple website pages, making manual collection
+                time-consuming and difficult to scale.
+            </p>
+
+            <p>
+                For example, an online bookstore may display
+                basic product information on catalogue pages,
+                while additional details are only available
+                through individual product pages.
+            </p>
+
+            <p>
+                This project explores how Python can automate
+                the collection of website information and
+                transform unstructured HTML into structured
+                datasets suitable for analysis.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DATA SOURCE -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">02</div>
+
+        <div>
+
+            <div class="section-label">
+                Data Source
+            </div>
+
+            <h2 class="section-title">
+                Books to Scrape
+            </h2>
+
+            <p>
+                The project uses Books to Scrape, a website
+                designed for practising web scraping techniques.
+            </p>
+
+            <p>
+                Its catalogue structure provides an opportunity
+                to practise collecting product information,
+                navigating pagination and extracting additional
+                details from individual product pages.
+            </p>
+
+            <div class="data-grid">
+
+                <div>
+                    <strong>title</strong>
+                    <span>Book title</span>
+                </div>
+
+                <div>
+                    <strong>price</strong>
+                    <span>Listed product price</span>
+                </div>
+
+                <div>
+                    <strong>rating</strong>
+                    <span>Rating from 1 to 5</span>
+                </div>
+
+                <div>
+                    <strong>availability</strong>
+                    <span>Stock availability</span>
+                </div>
+
+                <div>
+                    <strong>category</strong>
+                    <span>Book category</span>
+                </div>
+
+                <div>
+                    <strong>product_url</strong>
+                    <span>Individual product page</span>
+                </div>
+
+                <div>
+                    <strong>UPC</strong>
+                    <span>Product identifier</span>
+                </div>
+
+                <div>
+                    <strong>number_of_reviews</strong>
+                    <span>Product review count</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DATA COLLECTION -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">03</div>
+
+        <div>
+
+            <div class="section-label">
+                Data Collection
+            </div>
+
+            <h2 class="section-title">
+                Building the scraping pipeline
+            </h2>
+
+            <p>
+                Python Requests was used to retrieve HTML
+                content from catalogue and product pages.
+            </p>
+
+            <p>
+                BeautifulSoup was then used to parse the
+                HTML and extract relevant product information.
+            </p>
+
+            <div class="journey">
+
+                <div class="journey-step">
+
+                    <span>Step 01</span>
+
+                    <strong>
+                        Catalogue Pages
+                    </strong>
+
+                    <p>
+                        Retrieve the HTML content containing
+                        book listings.
+                    </p>
+
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step">
+
+                    <span>Step 02</span>
+
+                    <strong>
+                        HTML Parsing
+                    </strong>
+
+                    <p>
+                        Use BeautifulSoup to identify and
+                        extract relevant HTML elements.
+                    </p>
+
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step">
+
+                    <span>Step 03</span>
+
+                    <strong>
+                        Pagination
+                    </strong>
+
+                    <p>
+                        Navigate through multiple catalogue
+                        pages to collect additional products.
+                    </p>
+
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step">
+
+                    <span>Step 04</span>
+
+                    <strong>
+                        Product URLs
+                    </strong>
+
+                    <p>
+                        Extract individual book URLs for
+                        detailed data collection.
+                    </p>
+
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step final-step">
+
+                    <span>Step 05</span>
+
+                    <strong>
+                        Detailed Product Extraction
+                    </strong>
+
+                    <p>
+                        Retrieve additional product attributes
+                        from individual book pages.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DATA CLEANING -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">04</div>
+
+        <div>
+
+            <div class="section-label">
+                Data Processing
+            </div>
+
+            <h2 class="section-title">
+                Cleaning and structuring the data
+            </h2>
+
+            <p>
+                Raw website information requires additional
+                processing before it can be used for analysis.
+            </p>
+
+            <p>
+                Pandas and regular expressions were used to
+                prepare the extracted information and convert
+                it into a structured dataset.
+            </p>
+
+            <div class="feature-grid">
+
+                <div class="feature-box">
+
+                    <strong>
+                        Price Cleaning
+                    </strong>
+
+                    <p>
+                        Convert price strings into numerical
+                        values suitable for calculations.
+                    </p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <strong>
+                        Rating Conversion
+                    </strong>
+
+                    <p>
+                        Transform textual star ratings
+                        into numerical scores.
+                    </p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <strong>
+                        Availability Processing
+                    </strong>
+
+                    <p>
+                        Extract stock information from
+                        product availability text.
+                    </p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <strong>
+                        Data Validation
+                    </strong>
+
+                    <p>
+                        Check extracted fields and
+                        ensure consistent dataset structure.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DATA EXPORT -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">05</div>
+
+        <div>
+
+            <div class="section-label">
+                Data Engineering
+            </div>
+
+            <h2 class="section-title">
+                From HTML to structured datasets
+            </h2>
+
+            <p>
+                After extraction and cleaning, the collected
+                information was consolidated into a Pandas
+                DataFrame.
+            </p>
+
+            <p>
+                The resulting datasets were exported into
+                CSV and Excel formats, allowing the information
+                to be reused for further analysis and modelling.
+            </p>
+
+            <div class="journey">
+
+                <div class="journey-step">
+
+                    <span>Input</span>
+
+                    <strong>
+                        Raw HTML
+                    </strong>
+
+                    <p>
+                        Catalogue and individual product pages.
+                    </p>
+
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step">
+
+                    <span>Processing</span>
+
+                    <strong>
+                        Python + BeautifulSoup
+                    </strong>
+
+                    <p>
+                        Extract relevant product information.
+                    </p>
+
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step">
+
+                    <span>Transformation</span>
+
+                    <strong>
+                        Pandas
+                    </strong>
+
+                    <p>
+                        Clean, validate and structure the data.
+                    </p>
+
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step final-step">
+
+                    <span>Output</span>
+
+                    <strong>
+                        CSV + Excel
+                    </strong>
+
+                    <p>
+                        Structured datasets ready for analysis.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NLP RECOMMENDER -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">06</div>
+
+        <div>
+
+            <div class="section-label">
+                Natural Language Processing
+            </div>
+
+            <h2 class="section-title">
+                Building a book recommendation engine
+            </h2>
+
+            <p>
+                The collected book information was also used
+                to explore content-based recommendation
+                techniques.
+            </p>
+
+            <p>
+                Book text features were combined and
+                transformed into numerical vectors using
+                TF-IDF.
+            </p>
+
+            <p>
+                Cosine similarity was then used to compare
+                book representations and identify titles
+                with similar textual characteristics.
+            </p>
+
+            <div class="journey">
+
+                <div class="journey-step">
+
+                    <span>Step 01</span>
+
+                    <strong>
+                        Book Information
+                    </strong>
+
+                    <p>
+                        Prepare the collected book
+                        attributes for text analysis.
+                    </p>
+
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step">
+
+                    <span>Step 02</span>
+
+                    <strong>
+                        Text Preparation
+                    </strong>
+
+                    <p>
+                        Combine relevant text fields into
+                        a representation for each book.
+                    </p>
+
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step">
+
+                    <span>Step 03</span>
+
+                    <strong>
+                        TF-IDF Vectorization
+                    </strong>
+
+                    <p>
+                        Convert book text into numerical
+                        feature vectors.
+                    </p>
+
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step final-step">
+
+                    <span>Step 04</span>
+
+                    <strong>
+                        Cosine Similarity
+                    </strong>
+
+                    <p>
+                        Identify books with similar
+                        text-based characteristics.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RECOMMENDATION EXAMPLE -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">07</div>
+
+        <div>
+
+            <div class="section-label">
+                Recommendation Example
+            </div>
+
+            <h2 class="section-title">
+                From scraped data to recommendations
+            </h2>
+
+            <p>
+                The recommendation function can take a
+                book title as input and return candidate
+                books based on text similarity.
+            </p>
+
+            <p>
+                For example, a search using the title
+                "Sapiens" returned several candidate
+                recommendations from the collected dataset.
+            </p>
+
+            <div class="model-table">
+
+                <div class="model-row model-header">
+
+                    <span>Recommended Book</span>
+                    <span>Similarity</span>
+
+                </div>
+
+                <div class="model-row">
+
+                    <span>
+                        Unbound: How Eight Technologies
+                        Made Us Human
+                    </span>
+
+                    <strong>0.1096</strong>
+
+                </div>
+
+                <div class="model-row">
+
+                    <span>
+                        You Can't Bury Them All: Poems
+                    </span>
+
+                    <strong>0.0525</strong>
+
+                </div>
+
+                <div class="model-row">
+
+                    <span>
+                        Worlds Elsewhere
+                    </span>
+
+                    <strong>0.0517</strong>
+
+                </div>
+
+                <div class="model-row">
+
+                    <span>
+                        Mesaerion
+                    </span>
+
+                    <strong>0.0424</strong>
+
+                </div>
+
+                <div class="model-row">
+
+                    <span>
+                        How Music Works
+                    </span>
+
+                    <strong>0.0406</strong>
+
+                </div>
+
+            </div>
+
+            <p style="margin-top:30px;">
+                The relatively low similarity scores
+                highlight the limitations of using
+                short product descriptions and
+                catalogue information for recommendations.
+            </p>
+
+            <p>
+                A potential improvement would be to
+                incorporate richer descriptions,
+                additional metadata and more advanced
+                text representations.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CHALLENGES -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">08</div>
+
+        <div>
+
+            <div class="section-label">
+                Engineering Challenges
+            </div>
+
+            <h2 class="section-title">
+                Lessons from building the pipeline
+            </h2>
+
+            <div class="takeaway">
+
+                <strong>
+                    Website data is rarely analysis-ready.
+                </strong>
+
+                <p>
+                    Extracted HTML requires cleaning,
+                    transformation and validation before
+                    it can support meaningful analysis.
+                </p>
+
+            </div>
+
+            <div class="takeaway">
+
+                <strong>
+                    Pagination makes data collection scalable.
+                </strong>
+
+                <p>
+                    Automating navigation across catalogue
+                    pages reduces the need to collect
+                    information manually.
+                </p>
+
+            </div>
+
+            <div class="takeaway">
+
+                <strong>
+                    Data consistency matters.
+                </strong>
+
+                <p>
+                    Ensuring extracted fields have
+                    consistent lengths and formats
+                    is essential when constructing
+                    Pandas DataFrames.
+                </p>
+
+            </div>
+
+            <div class="takeaway">
+
+                <strong>
+                    Data collection enables downstream analytics.
+                </strong>
+
+                <p>
+                    The same structured dataset can support
+                    exploratory analysis, reporting and
+                    machine-learning applications.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BUSINESS APPLICATION -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">09</div>
+
+        <div>
+
+            <div class="section-label">
+                Practical Applications
+            </div>
+
+            <h2 class="section-title">
+                Beyond books: Applying scraping to business data
+            </h2>
+
+            <p>
+                Although this project uses a practice
+                bookstore, the same data collection
+                principles can be adapted to other
+                publicly accessible data sources,
+                subject to their access rules.
+            </p>
+
+            <div class="feature-grid">
+
+                <div class="feature-box">
+
+                    <strong>
+                        Price Monitoring
+                    </strong>
+
+                    <p>
+                        Collect product prices over time
+                        to support market analysis.
+                    </p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <strong>
+                        Product Intelligence
+                    </strong>
+
+                    <p>
+                        Compare product categories,
+                        availability and characteristics.
+                    </p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <strong>
+                        Supply Chain Analytics
+                    </strong>
+
+                    <p>
+                        Transform relevant external data
+                        into structured information for
+                        operational analysis.
+                    </p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <strong>
+                        Data Automation
+                    </strong>
+
+                    <p>
+                        Reduce repetitive manual data
+                        collection and preparation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GITHUB -->
+
+<section class="case-section">
+
+    <div class="container project-end">
+
+        <div>
+
+            <div class="section-label">
+                Explore the Code
+            </div>
+
+            <h2>
+                Want to see how it was built?
+            </h2>
+
+        </div>
+
+        <a href="https://github.com/ShinyDratini/web-scraping-data-mining"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary">
+
+            View Project on GitHub ↗
+
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-content">
+
+        <span>© 2026 Justin Analytics</span>
+
+        <span>
+            Built with HTML & CSS · Hosted on GitHub Pages
+        </span>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
