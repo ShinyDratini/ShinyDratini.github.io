@@ -1,1 +1,709 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Fragrantica Perfume Recommendation Engine case study by Justin Analytics.">
+
+    <title>Perfume Recommendation Engine | Justin Analytics</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="container nav-container">
+
+        <a href="../index.html" class="logo"
+           style="text-decoration:none; color:white;">
+            JUSTIN<span>ANALYTICS</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="../index.html#projects">Projects</a>
+            <a href="../index.html#about">About</a>
+            <a href="https://github.com/ShinyDratini"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+        </div>
+
+    </div>
+</nav>
+
+<main>
+
+<!-- PROJECT HERO -->
+
+<section class="case-hero">
+
+    <div class="container">
+
+        <a href="../index.html#projects" class="back-link">
+            ← Back to Projects
+        </a>
+
+        <div class="section-label">
+            02 / NATURAL LANGUAGE PROCESSING
+        </div>
+
+        <h1 class="case-title">
+            Perfume
+            <span class="gradient-text">Recommendation Engine.</span>
+        </h1>
+
+        <p class="case-intro">
+            Exploring how fragrance characteristics, scent accords,
+            customer ratings and natural language processing can
+            help people discover perfumes that match their preferences.
+        </p>
+
+        <div class="skills">
+            <span class="skill">Python</span>
+            <span class="skill">Pandas</span>
+            <span class="skill">Scikit-learn</span>
+            <span class="skill">NLP</span>
+            <span class="skill">TF-IDF</span>
+            <span class="skill">Cosine Similarity</span>
+            <span class="skill">Random Forest</span>
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="https://github.com/ShinyDratini/Fragrantica-Perfume-Recommender"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary">
+                View GitHub Repository ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- KEY RESULTS -->
+
+<section class="case-section">
+
+    <div class="container">
+
+        <div class="section-label">
+            At a Glance
+        </div>
+
+        <h2 class="section-title">
+            Project Highlights
+        </h2>
+
+        <div class="case-metrics">
+
+            <div class="case-metric">
+                <strong>131,930</strong>
+                <span>Perfumes Analyzed</span>
+            </div>
+
+            <div class="case-metric">
+                <strong>TF-IDF</strong>
+                <span>NLP Representation</span>
+            </div>
+
+            <div class="case-metric">
+                <strong>0.1932</strong>
+                <span>Rating Model MAE</span>
+            </div>
+
+            <div class="case-metric">
+                <strong>0.1746</strong>
+                <span>Rating Model R²</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROBLEM -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">01</div>
+
+        <div>
+
+            <div class="section-label">
+                The Problem
+            </div>
+
+            <h2 class="section-title">
+                Finding the right fragrance
+            </h2>
+
+            <p>
+                Choosing a perfume can be difficult because fragrances
+                contain multiple scent accords and notes, while personal
+                preferences vary significantly between individuals.
+            </p>
+
+            <p>
+                Traditional product browsing often requires users to
+                manually compare fragrances across different brands,
+                scent families, ratings and popularity levels.
+            </p>
+
+            <p>
+                This project explores whether natural language processing
+                and machine learning can simplify fragrance discovery
+                by recommending perfumes with similar scent profiles.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DATASET -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">02</div>
+
+        <div>
+
+            <div class="section-label">
+                Dataset
+            </div>
+
+            <h2 class="section-title">
+                Understanding 131,930 fragrances
+            </h2>
+
+            <p>
+                The project uses a Fragrantica perfume dataset containing
+                fragrance characteristics, scent accords, notes,
+                ratings and popularity-related information.
+            </p>
+
+            <div class="data-grid">
+
+                <div>
+                    <strong>rating_avg</strong>
+                    <span>Average fragrance rating</span>
+                </div>
+
+                <div>
+                    <strong>vote_count</strong>
+                    <span>Number of user ratings</span>
+                </div>
+
+                <div>
+                    <strong>longevity_avg</strong>
+                    <span>Reported fragrance longevity</span>
+                </div>
+
+                <div>
+                    <strong>sillage_avg</strong>
+                    <span>Reported fragrance projection</span>
+                </div>
+
+                <div>
+                    <strong>accords</strong>
+                    <span>Dominant scent characteristics</span>
+                </div>
+
+                <div>
+                    <strong>notes</strong>
+                    <span>Fragrance composition</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPLORATORY ANALYSIS -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">03</div>
+
+        <div>
+
+            <div class="section-label">
+                Exploratory Data Analysis
+            </div>
+
+            <h2 class="section-title">
+                Exploring fragrance characteristics
+            </h2>
+
+            <p>
+                Exploratory analysis was performed to understand the
+                distribution of scent accords and investigate how
+                fragrance characteristics relate to customer ratings.
+            </p>
+
+            <p>
+                Woody, powdery, sweet, citrus and aromatic accords
+                appeared frequently across the dataset.
+            </p>
+
+            <div class="model-table">
+
+                <div class="model-row model-header">
+                    <span>Fragrance Accord</span>
+                    <span>Count</span>
+                </div>
+
+                <div class="model-row">
+                    <span>Woody</span>
+                    <strong>81,432</strong>
+                </div>
+
+                <div class="model-row">
+                    <span>Powdery</span>
+                    <strong>62,885</strong>
+                </div>
+
+                <div class="model-row">
+                    <span>Sweet</span>
+                    <strong>60,625</strong>
+                </div>
+
+                <div class="model-row">
+                    <span>Citrus</span>
+                    <strong>59,969</strong>
+                </div>
+
+                <div class="model-row">
+                    <span>Aromatic</span>
+                    <strong>54,606</strong>
+                </div>
+
+            </div>
+
+            <p style="margin-top:30px;">
+                These results helped establish the dominant fragrance
+                characteristics in the dataset before developing the
+                recommendation engine.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RATING DRIVERS -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">04</div>
+
+        <div>
+
+            <div class="section-label">
+                Rating Analysis
+            </div>
+
+            <h2 class="section-title">
+                What influences perfume ratings?
+            </h2>
+
+            <p>
+                A separate analysis investigated relationships between
+                fragrance characteristics and average user ratings.
+            </p>
+
+            <p>
+                Longevity and sillage showed positive correlations
+                with fragrance ratings, suggesting that perceived
+                performance is associated with customer evaluations.
+            </p>
+
+            <div class="model-table">
+
+                <div class="model-row model-header">
+                    <span>Variable</span>
+                    <span>Correlation</span>
+                </div>
+
+                <div class="model-row">
+                    <span>Longevity</span>
+                    <strong>0.2849</strong>
+                </div>
+
+                <div class="model-row">
+                    <span>Sillage</span>
+                    <strong>0.2114</strong>
+                </div>
+
+                <div class="model-row">
+                    <span>Want</span>
+                    <strong>0.1320</strong>
+                </div>
+
+                <div class="model-row">
+                    <span>Release Year</span>
+                    <strong>-0.0828</strong>
+                </div>
+
+            </div>
+
+            <p style="margin-top:30px;">
+                These relationships are associations rather than
+                evidence that any individual characteristic directly
+                causes higher ratings.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RATING MODEL -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">05</div>
+
+        <div>
+
+            <div class="section-label">
+                Machine Learning
+            </div>
+
+            <h2 class="section-title">
+                Predicting fragrance ratings
+            </h2>
+
+            <p>
+                A Random Forest regression model was developed to
+                investigate how fragrance attributes contribute to
+                average user ratings.
+            </p>
+
+            <div class="results-grid">
+
+                <div>
+                    <span>MEAN ABSOLUTE ERROR</span>
+                    <strong>0.1932</strong>
+                </div>
+
+                <div>
+                    <span>R² SCORE</span>
+                    <strong>0.1746</strong>
+                </div>
+
+            </div>
+
+            <p style="margin-top:30px;">
+                The model achieved a mean absolute error of approximately
+                0.19 rating points, but its R² of 0.175 indicates that
+                much of the variation in ratings remained unexplained.
+            </p>
+
+            <p>
+                This highlights the difficulty of predicting subjective
+                customer preferences using fragrance attributes alone.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NLP -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">06</div>
+
+        <div>
+
+            <div class="section-label">
+                Natural Language Processing
+            </div>
+
+            <h2 class="section-title">
+                Representing fragrances as text
+            </h2>
+
+            <p>
+                Fragrance information was transformed into a text-based
+                representation to support content-based recommendations.
+            </p>
+
+            <p>
+                TF-IDF was used to convert the fragrance text into
+                numerical feature vectors.
+            </p>
+
+            <div class="journey">
+
+                <div class="journey-step">
+                    <span>Step 01</span>
+                    <strong>Fragrance Data</strong>
+                    <p>
+                        Collect scent accords and notes describing
+                        individual perfumes.
+                    </p>
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step">
+                    <span>Step 02</span>
+                    <strong>Text Preparation</strong>
+                    <p>
+                        Combine fragrance characteristics into a
+                        text representation.
+                    </p>
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step">
+                    <span>Step 03</span>
+                    <strong>TF-IDF</strong>
+                    <p>
+                        Transform fragrance text into numerical vectors
+                        representing the importance of different terms.
+                    </p>
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step final-step">
+                    <span>Step 04</span>
+                    <strong>Cosine Similarity</strong>
+                    <p>
+                        Compare fragrance vectors to identify perfumes
+                        with similar scent profiles.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HYBRID RECOMMENDER -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">07</div>
+
+        <div>
+
+            <div class="section-label">
+                Recommendation System
+            </div>
+
+            <h2 class="section-title">
+                Combining similarity with popularity
+            </h2>
+
+            <p>
+                The recommendation engine uses a hybrid scoring
+                approach that combines fragrance similarity,
+                average ratings and vote-based popularity.
+            </p>
+
+            <div class="feature-grid">
+
+                <div class="feature-box">
+                    <strong>70% — Similarity</strong>
+                    <p>
+                        How closely a fragrance matches the
+                        reference perfume's text representation.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <strong>20% — Rating</strong>
+                    <p>
+                        Incorporates the fragrance's average
+                        customer rating.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <strong>10% — Vote Score</strong>
+                    <p>
+                        Incorporates rating volume as a
+                        popularity-related signal.
+                    </p>
+                </div>
+
+            </div>
+
+            <p style="margin-top:30px;">
+                This approach balances fragrance resemblance with
+                rating and popularity information rather than relying
+                entirely on textual similarity.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TAKEAWAYS -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">08</div>
+
+        <div>
+
+            <div class="section-label">
+                Key Takeaways
+            </div>
+
+            <h2 class="section-title">
+                What I learned
+            </h2>
+
+            <div class="takeaway">
+
+                <strong>
+                    Text data can power product discovery.
+                </strong>
+
+                <p>
+                    TF-IDF and cosine similarity provide a way to
+                    recommend products based on descriptive attributes
+                    rather than requiring historical user interactions.
+                </p>
+
+            </div>
+
+            <div class="takeaway">
+
+                <strong>
+                    Customer ratings are subjective.
+                </strong>
+
+                <p>
+                    The rating prediction model demonstrated that
+                    fragrance characteristics alone cannot explain
+                    most variation in customer ratings.
+                </p>
+
+            </div>
+
+            <div class="takeaway">
+
+                <strong>
+                    Recommendation systems can combine multiple signals.
+                </strong>
+
+                <p>
+                    Incorporating similarity, rating and popularity
+                    provides a more flexible approach to ranking
+                    candidate fragrances.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- END -->
+
+<section class="case-section">
+
+    <div class="container project-end">
+
+        <div>
+
+            <div class="section-label">
+                Explore the Code
+            </div>
+
+            <h2>
+                Want to see how it was built?
+            </h2>
+
+        </div>
+
+        <a href="https://github.com/ShinyDratini/Fragrantica-Perfume-Recommender"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary">
+            View Project on GitHub ↗
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-content">
+
+        <span>© 2026 Justin Analytics</span>
+
+        <span>
+            Built with HTML & CSS · Hosted on GitHub Pages
+        </span>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
