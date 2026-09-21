@@ -1,0 +1,914 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Pothole Image Classification case study by Justin Analytics.">
+
+    <title>Pothole Image Classification | Justin Analytics</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="container nav-container">
+
+        <a href="../index.html"
+           class="logo"
+           style="text-decoration:none; color:white;">
+            JUSTIN<span>ANALYTICS</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="../index.html#projects">
+                Projects
+            </a>
+
+            <a href="../index.html#about">
+                About
+            </a>
+
+            <a href="https://github.com/ShinyDratini"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+</nav>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="case-hero">
+
+    <div class="container">
+
+        <a href="../index.html#projects"
+           class="back-link">
+            ← Back to Projects
+        </a>
+
+        <div class="section-label">
+            04 / APPLIED MACHINE LEARNING · COMPUTER VISION
+        </div>
+
+        <h1 class="case-title">
+            Pothole Image
+            <span class="gradient-text">
+                Classification.
+            </span>
+        </h1>
+
+        <p class="case-intro">
+            An Applied Machine Learning group project
+            comparing deep learning models for pothole
+            image classification, using rain-filter data
+            augmentation to simulate challenging road
+            conditions and Grad-CAM to interpret
+            model predictions.
+        </p>
+
+        <div class="skills">
+
+            <span class="skill">Python</span>
+            <span class="skill">Deep Learning</span>
+            <span class="skill">Computer Vision</span>
+            <span class="skill">CNN</span>
+            <span class="skill">ResNet50</span>
+            <span class="skill">MobileNetV2</span>
+            <span class="skill">Transfer Learning</span>
+            <span class="skill">Data Augmentation</span>
+            <span class="skill">Grad-CAM</span>
+
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="https://github.com/ShinyDratini/pothole-detection-computer-vision"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary">
+                View GitHub Repository ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HIGHLIGHTS -->
+
+<section class="case-section">
+
+    <div class="container">
+
+        <div class="section-label">
+            At a Glance
+        </div>
+
+        <h2 class="section-title">
+            Project Highlights
+        </h2>
+
+        <div class="case-metrics">
+
+            <div class="case-metric">
+                <strong>5,676</strong>
+                <span>Dataset Images</span>
+            </div>
+
+            <div class="case-metric">
+                <strong>98.85%</strong>
+                <span>Fine-Tuned MobileNetV2 Test Accuracy</span>
+            </div>
+
+            <div class="case-metric">
+                <strong>96.61%</strong>
+                <span>Rain-Augmented Model Test Accuracy</span>
+            </div>
+
+            <div class="case-metric">
+                <strong>Grad-CAM</strong>
+                <span>Model Explainability</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROBLEM -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">01</div>
+
+        <div>
+
+            <div class="section-label">
+                The Problem
+            </div>
+
+            <h2 class="section-title">
+                Identifying potholes through road imagery
+            </h2>
+
+            <p>
+                Potholes can damage vehicles and create
+                road safety hazards. Traditional road
+                inspections require time and manual effort,
+                making it challenging to monitor large
+                road networks efficiently.
+            </p>
+
+            <p>
+                This project explored how deep learning
+                could support pothole identification
+                by classifying road images according
+                to whether a pothole is present.
+            </p>
+
+            <p>
+                The group also investigated how
+                simulated rainy conditions could
+                be incorporated into model development
+                to reflect changes in road image appearance.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DATASET -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">02</div>
+
+        <div>
+
+            <div class="section-label">
+                Dataset
+            </div>
+
+            <h2 class="section-title">
+                MIIA Pothole Image Classification Challenge
+            </h2>
+
+            <p>
+                The project used the MIIA Pothole
+                Image Classification Challenge dataset,
+                containing 5,676 road images.
+            </p>
+
+            <p>
+                The task was binary image classification:
+                predicting whether a road image
+                contained a pothole.
+            </p>
+
+            <div class="data-grid">
+
+                <div>
+                    <strong>0</strong>
+                    <span>No Pothole</span>
+                </div>
+
+                <div>
+                    <strong>1</strong>
+                    <span>Pothole Present</span>
+                </div>
+
+                <div>
+                    <strong>224 × 224</strong>
+                    <span>Image Input Size</span>
+                </div>
+
+                <div>
+                    <strong>Stratified</strong>
+                    <span>Dataset Splitting</span>
+                </div>
+
+            </div>
+
+            <p style="margin-top:30px;">
+                Dataset sources:
+                <a href="https://zindi.world/competitions/miia-pothole-image-classification-challenge/data"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Zindi
+                </a>
+                and
+                <a href="https://www.kaggle.com/datasets/salimhammadi07/miia-pothole-image-classification-challenge/data"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Kaggle
+                </a>.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- METHODOLOGY -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">03</div>
+
+        <div>
+
+            <div class="section-label">
+                Methodology
+            </div>
+
+            <h2 class="section-title">
+                Preparing images for deep learning
+            </h2>
+
+            <p>
+                Images were resized to 224 × 224 pixels
+                and prepared for model training
+                using TensorFlow datasets.
+            </p>
+
+            <p>
+                Stratified sampling was used to
+                preserve the class proportions
+                across the training, validation
+                and testing subsets.
+            </p>
+
+            <div class="journey">
+
+                <div class="journey-step">
+
+                    <span>Step 01</span>
+
+                    <strong>
+                        Road Images
+                    </strong>
+
+                    <p>
+                        Load the original pothole
+                        classification dataset.
+                    </p>
+
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step">
+
+                    <span>Step 02</span>
+
+                    <strong>
+                        Image Preprocessing
+                    </strong>
+
+                    <p>
+                        Resize images to 224 × 224
+                        pixels for model input.
+                    </p>
+
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step">
+
+                    <span>Step 03</span>
+
+                    <strong>
+                        Dataset Splitting
+                    </strong>
+
+                    <p>
+                        Prepare stratified training,
+                        validation and testing subsets.
+                    </p>
+
+                </div>
+
+                <div class="journey-arrow">↓</div>
+
+                <div class="journey-step final-step">
+
+                    <span>Step 04</span>
+
+                    <strong>
+                        Model Development
+                    </strong>
+
+                    <p>
+                        Train and evaluate CNN-based
+                        image classification models.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MODEL COMPARISON -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">04</div>
+
+        <div>
+
+            <div class="section-label">
+                Model Development
+            </div>
+
+            <h2 class="section-title">
+                Comparing deep learning approaches
+            </h2>
+
+            <p>
+                The group compared transfer learning
+                and fine-tuning approaches using
+                ResNet50 and MobileNetV2.
+            </p>
+
+            <p>
+                ResNet50 provided an initial benchmark.
+                MobileNetV2 was then explored as a
+                lighter-weight architecture suitable
+                for further fine-tuning.
+            </p>
+
+            <div class="model-table">
+
+                <div class="model-row model-header">
+
+                    <span>Model / Approach</span>
+                    <span>Test Accuracy</span>
+
+                </div>
+
+                <div class="model-row">
+
+                    <span>
+                        ResNet50 — Transfer Learning
+                    </span>
+
+                    <strong>93.47%</strong>
+
+                </div>
+
+                <div class="model-row">
+
+                    <span>
+                        MobileNetV2 — Transfer Learning
+                    </span>
+
+                    <strong>85.52%</strong>
+
+                </div>
+
+                <div class="model-row">
+
+                    <span>
+                        MobileNetV2 — Fine-Tuned
+                    </span>
+
+                    <strong>98.85%</strong>
+
+                </div>
+
+                <div class="model-row">
+
+                    <span>
+                        MobileNetV2 — Rain-Augmented
+                    </span>
+
+                    <strong>96.61%</strong>
+
+                </div>
+
+            </div>
+
+            <p style="margin-top:30px;">
+                Fine-tuning MobileNetV2 produced
+                a reported test accuracy of 98.85%
+                on the original-dataset experiment.
+            </p>
+
+            <p>
+                The separate rain-augmented
+                MobileNetV2 experiment achieved
+                a reported test accuracy of 96.61%.
+                These results should be interpreted
+                in the context of their respective
+                experimental datasets.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DATA AUGMENTATION -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">05</div>
+
+        <div>
+
+            <div class="section-label">
+                Data Augmentation
+            </div>
+
+            <h2 class="section-title">
+                Simulating rainy road conditions
+            </h2>
+
+            <p>
+                The original dataset primarily
+                represented clear-weather conditions.
+                To introduce additional image variation,
+                the group explored weather-based
+                data augmentation.
+            </p>
+
+            <p>
+                Rain effects were applied using
+                the Automold road augmentation library.
+                The group explored drizzle, heavy
+                rain and torrential rain, as well
+                as snow and fog simulations.
+            </p>
+
+            <p>
+                More severe effects obscured road
+                details, making potholes difficult
+                to distinguish. The group therefore
+                selected drizzle for the main
+                rain-augmentation experiment.
+            </p>
+
+            <div class="feature-grid">
+
+                <div class="feature-box">
+
+                    <strong>
+                        Drizzle Filter
+                    </strong>
+
+                    <p>
+                        Simulated light rainfall
+                        while retaining important
+                        road-surface details.
+                    </p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <strong>
+                        Image Flipping
+                    </strong>
+
+                    <p>
+                        Introduced additional
+                        image orientations.
+                    </p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <strong>
+                        Image Rotation
+                    </strong>
+
+                    <p>
+                        Added further variation
+                        to the augmented dataset.
+                    </p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <strong>
+                        Fine-Tuning
+                    </strong>
+
+                    <p>
+                        Developed another MobileNetV2
+                        model using original and
+                        augmented images.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GRAD-CAM -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">06</div>
+
+        <div>
+
+            <div class="section-label">
+                Explainable AI
+            </div>
+
+            <h2 class="section-title">
+                Understanding model predictions with Grad-CAM
+            </h2>
+
+            <p>
+                Accuracy alone does not explain
+                which parts of an image influence
+                a model's classification.
+            </p>
+
+            <p>
+                The group applied Gradient-weighted
+                Class Activation Mapping (Grad-CAM)
+                to generate heatmaps highlighting
+                image regions that contributed
+                to model predictions.
+            </p>
+
+            <p>
+                These visualisations helped
+                investigate whether the model
+                focused on potholes or unrelated
+                features in the surrounding scene.
+            </p>
+
+            <div class="takeaway">
+
+                <strong>
+                    Why explainability matters
+                </strong>
+
+                <p>
+                    Grad-CAM helped the group
+                    examine model behaviour
+                    beyond accuracy scores and
+                    identify examples where
+                    background features influenced
+                    predictions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ERROR ANALYSIS -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">07</div>
+
+        <div>
+
+            <div class="section-label">
+                Error Analysis
+            </div>
+
+            <h2 class="section-title">
+                Learning from incorrect classifications
+            </h2>
+
+            <p>
+                The group examined images associated
+                with high prediction losses
+                to better understand model errors.
+            </p>
+
+            <p>
+                Grad-CAM visualisations revealed
+                examples where the model attended
+                to irrelevant scene features,
+                including the sun, roadside
+                buildings and lamps.
+            </p>
+
+            <p>
+                This highlighted the importance
+                of testing models against
+                varied lighting, backgrounds
+                and environmental conditions.
+            </p>
+
+            <div class="takeaway">
+
+                <strong>
+                    Key Learning
+                </strong>
+
+                <p>
+                    A high classification accuracy
+                    does not guarantee that a
+                    model always relies on the
+                    intended visual features.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LIMITATIONS -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">08</div>
+
+        <div>
+
+            <div class="section-label">
+                Limitations
+            </div>
+
+            <h2 class="section-title">
+                From simulated images to real roads
+            </h2>
+
+            <p>
+                Simulated rainfall can increase
+                image variation, but a rain filter
+                cannot fully reproduce the complexity
+                of real wet-weather road conditions.
+            </p>
+
+            <p>
+                Strong augmentation may also
+                obscure the visual information
+                required for correct classification.
+            </p>
+
+            <p>
+                Future work could evaluate the
+                models on independently collected
+                rainy road images and investigate
+                additional lighting and
+                environmental conditions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- APPLICATIONS -->
+
+<section class="case-section">
+
+    <div class="container case-content">
+
+        <div class="case-number">09</div>
+
+        <div>
+
+            <div class="section-label">
+                Practical Applications
+            </div>
+
+            <h2 class="section-title">
+                Supporting smarter road maintenance
+            </h2>
+
+            <p>
+                Image classification could form
+                part of a larger road-monitoring
+                workflow, helping identify images
+                that may require further inspection.
+            </p>
+
+            <div class="feature-grid">
+
+                <div class="feature-box">
+
+                    <strong>
+                        Road Monitoring
+                    </strong>
+
+                    <p>
+                        Screen road imagery
+                        for possible potholes.
+                    </p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <strong>
+                        Maintenance Planning
+                    </strong>
+
+                    <p>
+                        Support prioritisation
+                        of road inspection work.
+                    </p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <strong>
+                        Geolocation Integration
+                    </strong>
+
+                    <p>
+                        Future integration with
+                        location data could help
+                        identify affected road segments.
+                    </p>
+
+                </div>
+
+                <div class="feature-box">
+
+                    <strong>
+                        Predictive Analytics
+                    </strong>
+
+                    <p>
+                        Historical road and traffic
+                        data could support future
+                        maintenance forecasting.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GITHUB CTA -->
+
+<section class="case-section">
+
+    <div class="container project-end">
+
+        <div>
+
+            <div class="section-label">
+                Explore the Code
+            </div>
+
+            <h2>
+                See the model experiments
+            </h2>
+
+            <p>
+                Explore the original-dataset
+                and rain-augmentation notebooks
+                on GitHub.
+            </p>
+
+        </div>
+
+        <a href="https://github.com/ShinyDratini/pothole-detection-computer-vision"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary">
+            View Project on GitHub ↗
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-content">
+
+        <span>© 2026 Justin Analytics</span>
+
+        <span>
+            Built with HTML & CSS · Hosted on GitHub Pages
+        </span>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
