@@ -650,3 +650,68 @@ footer {
         align-items: flex-start;
     }
 }
+
+
+/* POTHOLE PROJECT SLIDESHOW */
+
+.pothole-slideshow {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    padding: 16px;
+    background: #0f1b2d;
+    border: 1px solid #24364d;
+    border-radius: 18px;
+}
+
+.pothole-slideshow img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.slideshow-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.slideshow-controls button {
+    padding: 12px 20px;
+    background: #172b42;
+    color: #ffffff;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+    transition: 0.2s ease;
+}
+
+.slideshow-controls button:hover {
+    background: #38bdf8;
+    color: #08111f;
+}
+
+#slide-counter {
+    color: #94a3b8;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+
+    .pothole-slideshow {
+        padding: 8px;
+    }
+
+    .slideshow-controls button {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+}
