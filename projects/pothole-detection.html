@@ -858,6 +858,110 @@
 </section>
 
 
+<!-- PROJECT PRESENTATION -->
+
+<section class="case-section">
+
+    <div class="container">
+
+        <div class="section-label">
+            Project Presentation
+        </div>
+
+        <h2 class="section-title">
+            Explore the Full Project
+        </h2>
+
+        <p class="case-intro">
+            Browse selected slides from our Applied Machine
+            Learning group presentation, including model
+            comparisons, rain-filter data augmentation
+            and Grad-CAM visualisations.
+        </p>
+
+        <div class="pothole-slideshow">
+
+            <img
+                id="pothole-slide"
+                src="../images/pothole-slides/slide-01.jpg"
+                alt="Pothole project presentation slide 1"
+                loading="lazy"
+            >
+
+            <div class="slideshow-controls">
+
+                <button
+                    type="button"
+                    id="previous-slide"
+                    onclick="changePotholeSlide(-1)">
+                    ← Previous
+                </button>
+
+                <span id="slide-counter">
+                    1 / 13
+                </span>
+
+                <button
+                    type="button"
+                    id="next-slide"
+                    onclick="changePotholeSlide(1)">
+                    Next →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+    let currentPotholeSlide = 1;
+
+    const totalPotholeSlides = 13;
+
+    function changePotholeSlide(direction) {
+
+        currentPotholeSlide += direction;
+
+        if (currentPotholeSlide > totalPotholeSlides) {
+            currentPotholeSlide = 1;
+        }
+
+        if (currentPotholeSlide < 1) {
+            currentPotholeSlide = totalPotholeSlides;
+        }
+
+        const slideNumber = String(
+            currentPotholeSlide
+        ).padStart(2, "0");
+
+        document.getElementById(
+            "pothole-slide"
+        ).src =
+            "../images/pothole-slides/slide-" +
+            slideNumber +
+            ".jpg";
+
+        document.getElementById(
+            "pothole-slide"
+        ).alt =
+            "Pothole project presentation slide " +
+            currentPotholeSlide;
+
+        document.getElementById(
+            "slide-counter"
+        ).textContent =
+            currentPotholeSlide +
+            " / " +
+            totalPotholeSlides;
+
+    }
+
+</script>
+    
 <!-- GITHUB CTA -->
 
 <section class="case-section">
