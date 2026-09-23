@@ -883,7 +883,7 @@
 
             <img
                 id="pothole-slide"
-                src="../images/pothole-slides/slide-01.jpg"
+                src="../images/pothole-slides/Slide1.jpg"
                 alt="Pothole project presentation slide 1"
                 loading="lazy"
             >
@@ -898,7 +898,7 @@
                 </button>
 
                 <span id="slide-counter">
-                    1 / 13
+                    1 / 15
                 </span>
 
                 <button
@@ -920,7 +920,7 @@
 
     let currentPotholeSlide = 1;
 
-    const totalPotholeSlides = 13;
+    const totalPotholeSlides = 15;
 
     function changePotholeSlide(direction) {
 
@@ -934,15 +934,11 @@
             currentPotholeSlide = totalPotholeSlides;
         }
 
-        const slideNumber = String(
-            currentPotholeSlide
-        ).padStart(2, "0");
-
         document.getElementById(
             "pothole-slide"
         ).src =
-            "../images/pothole-slides/slide-" +
-            slideNumber +
+            "../images/pothole-slides/Slide" +
+            currentPotholeSlide +
             ".jpg";
 
         document.getElementById(
