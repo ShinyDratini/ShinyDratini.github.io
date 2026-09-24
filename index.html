@@ -403,11 +403,18 @@
         <div id="portfolio-visit-count"></div>
 
     </div>
-</footer>
+</footer>  
 <script
     data-goatcounter="https://justinanalytics.goatcounter.com/count"
-    async
     src="https://gc.zgo.at/count.js">
+</script>
+
+<script>
+    window.goatcounter.visit_count({
+        append: "#portfolio-visit-count",
+        path: "TOTAL",
+        no_branding: true
+    });
 </script>
 </body>
 </html>
