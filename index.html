@@ -406,15 +406,40 @@
 </footer>  
 <script
     data-goatcounter="https://justinanalytics.goatcounter.com/count"
+    async
     src="https://gc.zgo.at/count.js">
 </script>
 
+<!-- Public Visitor Counter -->
+
 <script>
-    window.goatcounter.visit_count({
-        append: "#portfolio-visit-count",
-        path: "TOTAL",
-        no_branding: true
-    });
+    let counterAttempts = 0;
+
+    function loadPortfolioCounter() {
+
+        if (
+            window.goatcounter &&
+            typeof window.goatcounter.visit_count === "function"
+        ) {
+            window.goatcounter.visit_count({
+                append: "#portfolio-visit-count",
+                path: "TOTAL",
+                no_branding: true
+            });
+
+            return;
+        }
+
+        counterAttempts++;
+
+        if (counterAttempts < 25) {
+            setTimeout(loadPortfolioCounter, 200);
+        } else {
+            console.warn("GoatCounter did not load.");
+        }
+    }
+
+    loadPortfolioCounter();
 </script>
 </body>
 </html>
