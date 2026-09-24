@@ -400,7 +400,13 @@
             TOTAL PORTFOLIO VISITS
         </span>
 
-        <div id="portfolio-visit-count"></div>
+        <div id="portfolio-visit-count">
+          <iframe
+              src="https://justinanalytics.goatcounter.com/counter/TOTAL.html?no_branding=1"
+              title="Total portfolio visits"
+              loading="lazy">
+          </iframe>
+</div>
 
     </div>
 </footer>  
@@ -410,36 +416,5 @@
     src="https://gc.zgo.at/count.js">
 </script>
 
-<!-- Public Visitor Counter -->
-
-<script>
-    let counterAttempts = 0;
-
-    function loadPortfolioCounter() {
-
-        if (
-            window.goatcounter &&
-            typeof window.goatcounter.visit_count === "function"
-        ) {
-            window.goatcounter.visit_count({
-                append: "#portfolio-visit-count",
-                path: "TOTAL",
-                no_branding: true
-            });
-
-            return;
-        }
-
-        counterAttempts++;
-
-        if (counterAttempts < 25) {
-            setTimeout(loadPortfolioCounter, 200);
-        } else {
-            console.warn("GoatCounter did not load.");
-        }
-    }
-
-    loadPortfolioCounter();
-</script>
 </body>
 </html>
